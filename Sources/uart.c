@@ -64,15 +64,35 @@ void print_string(char* to_print)
 	}
 }
 
-void print_int(int16_t to_print_int)
+//print float number upto 2 decimal points
+void print_float(float a)
+{
+    uint8_t i=2;
+    print_int((uint16_t)a);
+    uart_putc('.');
+    while(i!=0)
+    {
+        a = a - (uint16_t)a;
+        a *= 10;
+        uart_putc(0x30 + (uint16_t)a);
+        i-=1;
+    }
+}
+
+void print_int(uint16_t to_print_int)
 {
 	uint8_t i = 5, valid = 0;
-	uint32_t div = 10000;
+	uint16_t div = 10000;
 
-	if(to_print_int & 0x8000 == 0x8000)
+	if((to_print_int & 0x8000) == 0x8000)
 	{
 		uart_putc('-');
 		to_print_int = (~to_print_int) + 1;
+	}
+
+	if(to_print_int > max_local)
+	{
+		max_local = to_print_int;
 	}
 
 	while(i != 0)

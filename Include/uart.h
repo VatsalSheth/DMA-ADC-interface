@@ -16,9 +16,11 @@
 void uart_init();
 void uart_putc(uint8_t);
 void print_string(char* to_print);
-void print_int(int16_t to_print_int);
+void print_int(uint16_t to_print_int);
+void print_float(float a);
 
 ring_wbells *ring_tx;
+int16_t max_local;
 
 volatile int8_t tx_flag;
 

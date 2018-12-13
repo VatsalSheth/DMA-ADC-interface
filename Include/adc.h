@@ -1,4 +1,18 @@
 /*
+/*
+/***********************************************************************************
+
+* @adc.h
+
+* @This header file includes all the function header files and it had variable and
+
+* function declaration used in adc.c
+
+*
+
+* @author Vatsal Sheth & Sarthak Jain
+
+************************************************************************************
  * adc.h
  *
  *  Created on: Dec 5, 2018

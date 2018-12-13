@@ -10,9 +10,7 @@
 #include "MKL25Z4.h"
 #include "stdint.h"
 
-//uint32_t va[25];
-int16_t value[128];
-uint32_t addr[128];
+uint32_t addr[10];
 uint8_t tmp=0;
 int16_t double_buffer[128];
 uint32_t app_addr = 64, dma_addr = 0;
